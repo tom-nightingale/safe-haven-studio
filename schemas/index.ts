@@ -5,8 +5,8 @@ import blockContent from "./objects/BlockContent";
 import imageBlock from "./objects/ImageBlock";
 import twoImageHeroBlock from "./objects/ContentBlocks/TwoImageHero/TwoImageHeroBlock";
 import proxyString from "./objects/proxyString";
-import shopifyCollection from "./objects/shopifyCollection";
-import shopifyCollectionRule from "./objects/shopifyCollectionRule";
+import NavigationSection from "./objects/Navigation/Section";
+import NavigationLink from "./objects/Navigation/Link";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -17,10 +17,22 @@ import spacer from "./objects/ContentBlocks/Spacer/Spacer";
 import textWithCta from "./objects/ContentBlocks/TextWithCta/TextWithCta";
 import { localeString, localeBlockContent, localeText } from "./objects/I18n";
 
-// Page types
+// Document types
 import Banner from "./documents/Banner";
 import Page from "./documents/Page";
+import Navigation from "./documents/Navigation";
+
+// Shopify Documents
 import Collection from "./documents/Collection";
+import Product from "./documents/Product";
+import ProductVariant from "./documents/ProductVariant";
+
+// Shopify Objects
+import shopifyCollection from "./objects/Shopify/Collection/shopifyCollection";
+import shopifyCollectionRule from "./objects/Shopify/Collection/shopifyCollectionRule";
+import shopifyProduct from "./objects/Shopify/Product/shopifyProduct";
+import shopifyProductVariant from "./objects/Shopify/ProductVariant/shopifyProductVariant";
+import shopifyProductOption from "./objects/Shopify/ProductOption/shopifyProductOption";
 
 const objectSchema = [
   seo,
@@ -29,19 +41,27 @@ const objectSchema = [
   contentBlocks,
   imageBlock,
   twoImageHeroBlock,
+  proxyString,
   shopifyCollection,
   shopifyCollectionRule,
-  proxyString,
+  shopifyProduct,
+  shopifyProductVariant,
+  shopifyProductOption,
   localeString,
   localeBlockContent,
   localeText,
+  NavigationSection,
+  NavigationLink,
 ];
 const contentBlockSchema = [hero, video, spacer, twoImageHero, textWithCta];
 
-const documentSchema = [Banner, Page, Collection];
+const documentSchema = [Banner, Page, Navigation];
 
-export const schemaTypes = [
+const shopifySchema = [Collection, Product, ProductVariant];
+
+export const schemas = [
   ...objectSchema,
   ...contentBlockSchema,
   ...documentSchema,
+  ...shopifySchema,
 ];

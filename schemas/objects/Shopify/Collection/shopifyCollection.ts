@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import ShopifyIcon from "../../../components/icons/Shopify";
 
 export default defineField({
   name: "shopifyCollection",

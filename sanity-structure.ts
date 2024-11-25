@@ -1,46 +1,68 @@
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
+import { InfoOutlineIcon } from "@sanity/icons";
 
 export const SanityStructure = (S: any, context: any) =>
   S.list()
     .title("Sanity Starter")
     .items([
-      // S.listItem()
-      //   .title('Global Settings')
-      //   .child(S.document().schemaType('global').documentId('global').title('Global Settings')),
-      // S.divider(),
-      //   S.listItem()
-      //     .title('Home')
-      //     .child(S.document().schemaType('home').documentId('home').title('Home')),
-      //   S.divider(),
-      //   S.listItem()
-      //     .title('About')
-      //     .child(S.document().schemaType('about').documentId('about').title('About')),
-      //   S.divider(),
-      //   S.listItem()
-      //     .title('Team')
-      //     .child(S.document().schemaType('team').documentId('team').title('Team')),
-      //   S.divider(),
+      S.divider(),
       orderableDocumentListDeskItem({
         type: "banner",
         title: "Banners",
         S,
         context,
       }),
-      S.divider(),
       S.listItem()
         .title("Pages")
+        .schemaType("page")
         .child(S.documentTypeList("page").title("Pages")),
+      S.listItem()
+        .title("Navigation")
+        .schemaType("navigation")
+        .child(S.documentTypeList("navigation").title("Navigation")),
       S.divider(),
       S.listItem()
         .title("Collections")
         .schemaType("collection")
         .child(S.documentTypeList("collection")),
-      //   S.listItem()
-      //     .title('Contact')
-      //     .child(S.document().schemaType('contact').documentId('contact').title('Contact')),
-      //   S.divider(),
-      //   S.listItem()
-      //     .title('Testimonials')
-      //     .child(S.documentTypeList('testimonial').title('Testimonials')),
-      //   S.divider(),
+      S.listItem()
+        .title("Products")
+        .schemaType("product")
+        .child(
+          S.documentTypeList("product")
+            // .defaultLayout('detail')
+            .child(async id =>
+              S.list()
+                .title("Product")
+                .items([
+                  // Details
+                  S.listItem()
+                    .title("Details")
+                    .icon(InfoOutlineIcon)
+                    .child(S.document().schemaType("product").documentId(id)),
+                  // Product variants
+                  S.listItem()
+                    .title("Variants")
+                    .schemaType("productVariant")
+                    .child(
+                      S.documentList()
+                        .title("Variants")
+                        .schemaType("productVariant")
+                        .filter(
+                          `
+                      _type == "productVariant"
+                      && store.productId == $productId
+                    `,
+                        )
+                        .params({
+                          productId: Number(id.replace("shopifyProduct-", "")),
+                        }),
+                    ),
+                ]),
+            ),
+        ),
+      S.divider(),
+      // S.listItem()
+      //   .title('Global Settings')
+      //   .child(S.document().schemaType('global').documentId('global').title('Global Settings')),
     ]);

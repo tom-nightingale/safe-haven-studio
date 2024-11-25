@@ -1,11 +1,12 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
-import { schemaTypes } from "./schemaTypes";
+import { schemas } from "./schemas";
 import { SanityStructure } from "./sanity-structure";
-// import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
 import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
+import { shopifyAssets } from "sanity-plugin-shopify-assets";
+// import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
   name: "default",
@@ -30,9 +31,12 @@ export default defineConfig({
       enableSearch: true,
     }),
     imageHotspotArrayPlugin(),
+    shopifyAssets({
+      shopifyDomain: "*.myshopify.com",
+    }),
     // vercelDeployTool()
   ],
   schema: {
-    types: schemaTypes,
+    types: schemas,
   },
 });
