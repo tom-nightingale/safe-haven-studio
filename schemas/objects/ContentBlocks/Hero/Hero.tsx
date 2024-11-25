@@ -69,8 +69,21 @@ export default defineType({
     defineField({
       title: "Image",
       name: "image",
-      type: "imageBlock",
+      type: "array",
+      of: [
+        {
+          name: "defaultImage",
+          title: "Image",
+          type: "imageBlock",
+        },
+        {
+          name: "imageWithProductHotspots",
+          title: "Image With Product Hotspots",
+          type: "imageWithProductHotspots",
+        },
+      ],
       hidden: ({ parent }) => parent?.mediaType === "video",
+      validation: rule => rule.required().max(1),
     }),
     defineField({
       title: "Video",
@@ -92,7 +105,7 @@ export default defineType({
     select: {
       title: "title",
       subtitle: "subtitle",
-      media: "image.image",
+      media: "image[0].image",
     },
   },
 });

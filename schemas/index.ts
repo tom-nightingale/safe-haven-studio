@@ -7,6 +7,9 @@ import twoImageHeroBlock from "./objects/ContentBlocks/TwoImageHero/TwoImageHero
 import proxyString from "./objects/proxyString";
 import NavigationSection from "./objects/Navigation/Section";
 import NavigationLink from "./objects/Navigation/Link";
+import productHotspots from "./objects/productHotspots";
+import imageWithProductHotspots from "./objects/imageWithProductHotspots";
+import productWithVariant from "./objects/productWithVariant";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -52,6 +55,9 @@ const objectSchema = [
   localeText,
   NavigationSection,
   NavigationLink,
+  productHotspots,
+  imageWithProductHotspots,
+  productWithVariant,
 ];
 const contentBlockSchema = [hero, video, spacer, twoImageHero, textWithCta];
 

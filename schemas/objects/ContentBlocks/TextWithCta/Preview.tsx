@@ -8,8 +8,6 @@ export const capitalizeFirstLetter = (str: string) => {
 export const Preview = (props: PreviewProps) => {
   const { _type, title, text } = props;
 
-  console.log(props);
-
   return (
     <Flex align="center">
       <Box

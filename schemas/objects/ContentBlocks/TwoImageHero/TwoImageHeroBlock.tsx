@@ -25,4 +25,14 @@ export default defineType({
       validation: rule => rule.required(),
     }),
   ],
+  preview: {
+    select: {
+      title: "title.en",
+      media: "image.image",
+    },
+    prepare: ({ title, media }) => ({
+      title: title,
+      media: media,
+    }),
+  },
 });

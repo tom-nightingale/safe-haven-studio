@@ -26,33 +26,4 @@ export default defineType({
       of: [{ type: "navigation.section" }],
     }),
   ],
-  //   preview: {
-  //     select: {
-  //       title: "content",
-  //       backgroundColour: "backgroundColour",
-  //     },
-  //     prepare({ title, backgroundColour }: any) {
-  //       let customTitle = "No title";
-  //       if (title && title[0]) {
-  //         customTitle = title
-  //           .map((text: any) => text.children.map((child: any) => child.text))
-  //           .join(" ");
-  //       }
-  //       return {
-  //         title: customTitle,
-  //         media: (
-  //           <span
-  //             style={{
-  //               border: "solid",
-  //               borderWidth: "0.5px",
-  //               borderColor: "white",
-  //               width: "2rem",
-  //               height: "2rem",
-  //               backgroundColor: backgroundColour.value,
-  //             }}
-  //           />
-  //         ),
-  //       };
-  //     },
-  //   },
 });
