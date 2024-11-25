@@ -20,6 +20,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^3.64.1",
+    "sanity-plugin-hotspot-array": "^2.1.1",
     "sanity-plugin-internationalized-array": "^3.0.2",
     "sanity-plugin-simpler-color-input": "^3.0.0",
     "styled-components": "^6.1.8"
@@ -27,12 +28,12 @@
   "devDependencies": {
     "@sanity/eslint-config-studio": "^4.0.0",
     "@types/react": "^18.0.25",
-    "eslint": "^8.6.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6",
     "@typescript-eslint/eslint-plugin": "8.8.0",
     "@typescript-eslint/parser": "8.8.0",
-    "eslint-config-prettier": "9.1.0"
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "9.1.0",
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6"
   },
   "prettier": {
     "singleQuote": false,

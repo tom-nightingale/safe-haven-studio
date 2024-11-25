@@ -14,6 +14,7 @@ export default defineType({
         { type: "video" },
         { type: "spacer" },
         { type: "twoImageHero" },
+        { type: "textWithCta" },
       ],
     }),
   ],

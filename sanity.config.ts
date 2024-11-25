@@ -5,6 +5,7 @@ import { schemaTypes } from "./schemaTypes";
 import { SanityStructure } from "./sanity-structure";
 // import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
+import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
 
 export default defineConfig({
   name: "default",
@@ -28,6 +29,7 @@ export default defineConfig({
       ],
       enableSearch: true,
     }),
+    imageHotspotArrayPlugin(),
     // vercelDeployTool()
   ],
   schema: {

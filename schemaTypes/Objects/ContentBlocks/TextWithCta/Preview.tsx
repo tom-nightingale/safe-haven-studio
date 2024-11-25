@@ -6,7 +6,9 @@ export const capitalizeFirstLetter = (str: string) => {
 };
 
 export const Preview = (props: PreviewProps) => {
-  const { _type, title } = props;
+  const { _type, title, text } = props;
+
+  console.log(props);
 
   return (
     <Flex align="center">
@@ -30,16 +32,28 @@ export const Preview = (props: PreviewProps) => {
             width: "2rem",
             height: "2rem",
             marginLeft: "0.5rem",
-            backgroundColor: "#ffffff",
+            backgroundColor: "#333333",
             fontSize: "0.75rem",
-            color: "#333333",
+            color: "white",
           }}
         >
-          S
+          T
         </span>
-        <Text size={1} weight="medium">
-          Spacer | {capitalizeFirstLetter(title)}
-        </Text>
+        <Box
+          flex={1}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+        >
+          <Text size={1} weight="medium">
+            {title}
+          </Text>
+          <Text size={1} weight="medium">
+            {text ? `${text.substring(0, 25)}...` : "No text"}
+          </Text>
+        </Box>
       </Box>
       <Badge tone="primary">{capitalizeFirstLetter(_type)} Block</Badge>
     </Flex>

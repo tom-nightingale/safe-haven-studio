@@ -6,7 +6,6 @@ export const capitalizeFirstLetter = (str: string) => {
 };
 
 export const BlockPreview = (props: PreviewProps) => {
-  console.log(props);
   const { _type } = props;
 
   return (

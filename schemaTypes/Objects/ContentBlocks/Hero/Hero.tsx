@@ -84,6 +84,7 @@ export default defineType({
       name: "links",
       type: "array",
       of: [{ type: "link" }],
+      validation: rule => rule.max(2),
     }),
   ],
   components: { preview: BlockPreview },
