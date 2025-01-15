@@ -16,6 +16,7 @@ export const Preview = (props: PreviewProps) => {
           display: "flex",
           gap: "0.5rem",
           alignItems: "center",
+          padding: "0.5rem",
         }}
       >
         <span
@@ -29,7 +30,6 @@ export const Preview = (props: PreviewProps) => {
             borderColor: "#333",
             width: "2rem",
             height: "2rem",
-            marginLeft: "0.5rem",
             backgroundColor: "#ffffff",
             fontSize: "0.75rem",
             color: "#333333",
@@ -41,7 +41,9 @@ export const Preview = (props: PreviewProps) => {
           Spacer | {capitalizeFirstLetter(title)}
         </Text>
       </Box>
-      <Badge tone="primary">{capitalizeFirstLetter(_type)} Block</Badge>
+      <Badge style={{ marginRight: "0.5rem" }} tone="primary">
+        {capitalizeFirstLetter(_type)} Block
+      </Badge>
     </Flex>
   );
 };

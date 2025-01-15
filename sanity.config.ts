@@ -9,6 +9,8 @@ import { shopifyAssets } from "sanity-plugin-shopify-assets";
 import StudioLogo from "./utils/StudioLogo";
 // import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
+import "./styles/config.css";
+
 export default defineConfig({
   icon: StudioLogo,
   name: "default",

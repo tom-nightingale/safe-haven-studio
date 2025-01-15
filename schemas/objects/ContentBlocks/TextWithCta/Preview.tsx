@@ -16,6 +16,7 @@ export const Preview = (props: PreviewProps) => {
           display: "flex",
           gap: "0.5rem",
           alignItems: "center",
+          padding: "0.5rem",
         }}
       >
         <span
@@ -29,7 +30,6 @@ export const Preview = (props: PreviewProps) => {
             borderColor: "#333",
             width: "2rem",
             height: "2rem",
-            marginLeft: "0.5rem",
             backgroundColor: "#333333",
             fontSize: "0.75rem",
             color: "white",
@@ -48,12 +48,14 @@ export const Preview = (props: PreviewProps) => {
           <Text size={1} weight="medium">
             {title}
           </Text>
-          <Text size={1} weight="medium">
+          <Text size={1} muted>
             {text ? `${text.substring(0, 25)}...` : "No text"}
           </Text>
         </Box>
       </Box>
-      <Badge tone="primary">{capitalizeFirstLetter(_type)} Block</Badge>
+      <Badge style={{ marginRight: "0.5rem" }} tone="primary">
+        {capitalizeFirstLetter(_type)} Block
+      </Badge>
     </Flex>
   );
 };

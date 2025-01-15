@@ -15,6 +15,7 @@ export default defineType({
         { type: "spacer" },
         { type: "twoImageHero" },
         { type: "textWithCta" },
+        { type: "carousel" },
       ],
     }),
   ],

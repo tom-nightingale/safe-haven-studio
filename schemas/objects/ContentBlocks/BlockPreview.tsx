@@ -7,11 +7,12 @@ export const capitalizeFirstLetter = (str: string) => {
 
 export const BlockPreview = (props: PreviewProps) => {
   const { _type } = props;
-
   return (
     <Flex align="center">
       <Box flex={1}>{props.renderDefault(props)}</Box>
-      <Badge tone="primary">{capitalizeFirstLetter(_type)} Block</Badge>
+      <Badge style={{ marginRight: "0.5rem" }} tone="primary">
+        {capitalizeFirstLetter(_type)} Block
+      </Badge>
     </Flex>
   );
 };

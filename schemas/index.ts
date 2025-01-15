@@ -10,6 +10,7 @@ import NavigationLink from "./objects/Navigation/Link";
 import productHotspots from "./objects/productHotspots";
 import imageWithProductHotspots from "./objects/imageWithProductHotspots";
 import productWithVariant from "./objects/productWithVariant";
+import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -18,6 +19,7 @@ import hero from "./objects/ContentBlocks/Hero/Hero";
 import video from "./objects/ContentBlocks/Video/Video";
 import spacer from "./objects/ContentBlocks/Spacer/Spacer";
 import textWithCta from "./objects/ContentBlocks/TextWithCta/TextWithCta";
+import carousel from "./objects/ContentBlocks/Carousel/Carousel";
 import { localeString, localeBlockContent, localeText } from "./objects/I18n";
 
 // Document types
@@ -59,8 +61,16 @@ const objectSchema = [
   productHotspots,
   imageWithProductHotspots,
   productWithVariant,
+  carouselCard,
 ];
-const contentBlockSchema = [hero, video, spacer, twoImageHero, textWithCta];
+const contentBlockSchema = [
+  hero,
+  video,
+  spacer,
+  twoImageHero,
+  textWithCta,
+  carousel,
+];
 
 const documentSchema = [Banner, Page, Navigation, Global];
 
