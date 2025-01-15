@@ -3,7 +3,7 @@ import { InfoOutlineIcon } from "@sanity/icons";
 
 export const SanityStructure = (S: any, context: any) =>
   S.list()
-    .title("Sanity Starter")
+    .title("Sanity Studio Boilerplate")
     .items([
       S.divider(),
       orderableDocumentListDeskItem({
@@ -62,7 +62,13 @@ export const SanityStructure = (S: any, context: any) =>
             ),
         ),
       S.divider(),
-      // S.listItem()
-      //   .title('Global Settings')
-      //   .child(S.document().schemaType('global').documentId('global').title('Global Settings')),
+      S.listItem()
+        .title("Global Settings")
+        .schemaType("global")
+        .child(
+          S.document()
+            .schemaType("global")
+            .documentId("global")
+            .title("Global Settings"),
+        ),
     ]);

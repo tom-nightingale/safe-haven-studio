@@ -21,6 +21,7 @@ import textWithCta from "./objects/ContentBlocks/TextWithCta/TextWithCta";
 import { localeString, localeBlockContent, localeText } from "./objects/I18n";
 
 // Document types
+import Global from "./documents/Global";
 import Banner from "./documents/Banner";
 import Page from "./documents/Page";
 import Navigation from "./documents/Navigation";
@@ -61,7 +62,7 @@ const objectSchema = [
 ];
 const contentBlockSchema = [hero, video, spacer, twoImageHero, textWithCta];
 
-const documentSchema = [Banner, Page, Navigation];
+const documentSchema = [Banner, Page, Navigation, Global];
 
 const shopifySchema = [Collection, Product, ProductVariant];
 

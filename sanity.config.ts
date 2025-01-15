@@ -6,9 +6,11 @@ import { SanityStructure } from "./sanity-structure";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
 import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
 import { shopifyAssets } from "sanity-plugin-shopify-assets";
+import StudioLogo from "./utils/StudioLogo";
 // import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
+  icon: StudioLogo,
   name: "default",
   title: "Sanity Studio Boilerplate",
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,

@@ -77,6 +77,11 @@ export default defineType({
           type: "imageBlock",
         },
         {
+          name: "productWithVariant",
+          title: "Product with variant",
+          type: "productWithVariant",
+        },
+        {
           name: "imageWithProductHotspots",
           title: "Image With Product Hotspots",
           type: "imageWithProductHotspots",

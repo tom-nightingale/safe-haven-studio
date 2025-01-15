@@ -56,18 +56,10 @@ export default defineType({
       type: "proxyString",
       options: { field: "store.slug.current" },
     }),
-    // Color theme
-    // defineField({
-    //   name: "colorTheme",
-    //   title: "Color theme",
-    //   type: "reference",
-    //   to: [{ type: "colorTheme" }],
-    //   group: "editorial",
-    // }),
     defineField({
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      title: "Content Blocks",
+      name: "contentBlocks",
+      type: "contentBlocks",
       group: "editorial",
     }),
     defineField({
@@ -77,12 +69,12 @@ export default defineType({
       description: "Product data from Shopify (read-only)",
       group: "shopifySync",
     }),
-    // defineField({
-    //   name: "seo",
-    //   title: "SEO",
-    //   type: "seo.shopify",
-    //   group: "seo",
-    // }),
+    defineField({
+      name: "seo",
+      title: "SEO",
+      type: "seo",
+      group: "seo",
+    }),
   ],
   orderings: [
     {
