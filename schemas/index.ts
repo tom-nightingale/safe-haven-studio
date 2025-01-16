@@ -20,6 +20,7 @@ import video from "./objects/ContentBlocks/Video/Video";
 import spacer from "./objects/ContentBlocks/Spacer/Spacer";
 import textWithCta from "./objects/ContentBlocks/TextWithCta/TextWithCta";
 import carousel from "./objects/ContentBlocks/Carousel/Carousel";
+import textWithImage from "./objects/ContentBlocks/TextWithImage/TextWithImage";
 import { localeString, localeBlockContent, localeText } from "./objects/I18n";
 
 // Document types
@@ -70,6 +71,7 @@ const contentBlockSchema = [
   twoImageHero,
   textWithCta,
   carousel,
+  textWithImage,
 ];
 
 const documentSchema = [Banner, Page, Navigation, Global];

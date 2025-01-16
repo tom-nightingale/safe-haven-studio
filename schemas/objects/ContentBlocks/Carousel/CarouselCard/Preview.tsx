@@ -7,8 +7,13 @@ export const capitalizeFirstLetter = (str: string) => {
   return String(str).charAt(0).toUpperCase() + String(str).slice(1);
 };
 
-export const Preview = (props: PreviewProps) => {
-  const [productData, setProductData] = useState(null);
+type CustomPreviewProps = PreviewProps & {
+  productRef: { _ref: string };
+  cardType: string;
+};
+
+export const Preview = (props: CustomPreviewProps) => {
+  const [productData, setProductData] = useState<any>(null);
   const client = useClient({ apiVersion: "2022-10-25" });
 
   const { productRef, cardType } = props;
