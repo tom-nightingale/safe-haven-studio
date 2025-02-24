@@ -63,6 +63,11 @@ export const SanityStructure = (S: any, context: any) =>
         ),
       S.divider(),
       S.listItem()
+        .title("Redirect Groups")
+        .schemaType("redirectGroup")
+        .child(S.documentTypeList("redirectGroup").title("Redirect Groups")),
+      S.divider(),
+      S.listItem()
         .title("Global Settings")
         .schemaType("global")
         .child(

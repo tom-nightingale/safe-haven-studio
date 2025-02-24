@@ -12,6 +12,7 @@ import imageWithProductHotspots from "./objects/imageWithProductHotspots";
 import productWithVariant from "./objects/productWithVariant";
 import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
+import redirect from "./objects/Redirect";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -29,6 +30,7 @@ import Global from "./documents/Global";
 import Banner from "./documents/Banner";
 import Page from "./documents/Page";
 import Navigation from "./documents/Navigation";
+import RedirectGroup from "./documents/RedirectGroup";
 
 // Shopify Documents
 import Collection from "./documents/Collection";
@@ -38,7 +40,6 @@ import ProductVariant from "./documents/ProductVariant";
 // Shopify Objects
 import shopifyCollection from "./objects/Shopify/Collection/shopifyCollection";
 import shopifyCollectionRule from "./objects/Shopify/Collection/shopifyCollectionRule";
-
 import shopifyProduct from "./objects/Shopify/Product/shopifyProduct";
 import shopifyProductVariant from "./objects/Shopify/ProductVariant/shopifyProductVariant";
 import shopifyProductOption from "./objects/Shopify/ProductOption/shopifyProductOption";
@@ -72,7 +73,9 @@ const objectSchema = [
   productWithVariant,
   carouselCard,
   heroImage,
+  redirect,
 ];
+
 const contentBlockSchema = [
   hero,
   video,
@@ -83,7 +86,7 @@ const contentBlockSchema = [
   textWithImage,
 ];
 
-const documentSchema = [Banner, Page, Navigation, Global];
+const documentSchema = [Banner, Page, Navigation, RedirectGroup, Global];
 
 const shopifySchema = [Collection, Product, ProductVariant];
 
