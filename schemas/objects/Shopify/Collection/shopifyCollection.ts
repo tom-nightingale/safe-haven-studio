@@ -1,5 +1,5 @@
 import { defineField } from "sanity";
-import ShopifyIcon from "../../../components/icons/Shopify";
+// import ShopifyIcon from "../../../components/icons/Shopify";
 
 export default defineField({
   name: "shopifyCollection",
@@ -83,11 +83,10 @@ export default defineField({
       name: "rules",
       title: "Rules",
       type: "array",
-      description: "Include Shopify products that satisfy these conditions",
       of: [
         {
-          name: "rule",
-          title: "Rule",
+          name: "collectionRule",
+          title: "Shopify Collection Rule",
           type: "collectionRule",
         },
       ],

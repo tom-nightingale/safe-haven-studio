@@ -1,45 +1,44 @@
-import {FilterIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { FilterIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
-export default defineField({
-  title: 'Collection rule',
-  name: 'collectionRule',
-  type: 'object',
+export default defineType({
+  name: "collectionRule",
+  title: "Collection rule",
+  type: "object",
   icon: FilterIcon,
   readOnly: true,
   fields: [
-    // Column
     defineField({
-      title: 'Column',
-      name: 'column',
-      type: 'string',
+      title: "Column",
+      name: "column",
+      type: "string",
     }),
     // Values
     defineField({
-      title: 'Relation',
-      name: 'relation',
-      type: 'string',
+      title: "Relation",
+      name: "relation",
+      type: "string",
     }),
     // Condition
     defineField({
-      title: 'Condition',
-      name: 'condition',
-      type: 'string',
+      title: "Condition",
+      name: "condition",
+      type: "string",
     }),
   ],
   preview: {
     select: {
-      condition: 'condition',
-      name: 'column',
-      relation: 'relation',
+      condition: "condition",
+      name: "column",
+      relation: "relation",
     },
     prepare(selection) {
-      const {condition, name, relation} = selection
+      const { condition, name, relation } = selection;
 
       return {
         subtitle: `${relation} ${condition}`,
         title: name,
-      }
+      };
     },
   },
-})
+});

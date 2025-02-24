@@ -11,6 +11,7 @@ import productHotspots from "./objects/productHotspots";
 import imageWithProductHotspots from "./objects/imageWithProductHotspots";
 import productWithVariant from "./objects/productWithVariant";
 import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
+import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -37,9 +38,13 @@ import ProductVariant from "./documents/ProductVariant";
 // Shopify Objects
 import shopifyCollection from "./objects/Shopify/Collection/shopifyCollection";
 import shopifyCollectionRule from "./objects/Shopify/Collection/shopifyCollectionRule";
+
 import shopifyProduct from "./objects/Shopify/Product/shopifyProduct";
 import shopifyProductVariant from "./objects/Shopify/ProductVariant/shopifyProductVariant";
 import shopifyProductOption from "./objects/Shopify/ProductOption/shopifyProductOption";
+import priceRange from "./objects/Shopify/Product/priceRange";
+import options from "./objects/Shopify/Product/options";
+import spot from "./objects/Shopify/ProductHotspot/Spot";
 
 const objectSchema = [
   seo,
@@ -52,6 +57,8 @@ const objectSchema = [
   shopifyCollection,
   shopifyCollectionRule,
   shopifyProduct,
+  priceRange,
+  options,
   shopifyProductVariant,
   shopifyProductOption,
   localeString,
@@ -61,8 +68,10 @@ const objectSchema = [
   NavigationLink,
   productHotspots,
   imageWithProductHotspots,
+  spot,
   productWithVariant,
   carouselCard,
+  heroImage,
 ];
 const contentBlockSchema = [
   hero,
