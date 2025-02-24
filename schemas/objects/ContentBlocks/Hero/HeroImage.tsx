@@ -26,6 +26,7 @@ export default defineType({
           type: "imageWithProductHotspots",
         },
       ],
+      validation: rule => rule.required().max(1),
     }),
   ],
 });

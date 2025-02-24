@@ -21,4 +21,10 @@ export default defineType({
       description: "Alt text to use for the image",
     }),
   ],
+  preview: {
+    select: {
+      title: "altText.en",
+      media: "image",
+    },
+  },
 });

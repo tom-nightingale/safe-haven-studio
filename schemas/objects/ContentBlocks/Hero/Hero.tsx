@@ -71,7 +71,6 @@ export default defineType({
       name: "image",
       type: "heroImage",
       hidden: ({ parent }) => parent?.mediaType === "video",
-      validation: rule => rule.required().max(1),
     }),
     defineField({
       title: "Video",
@@ -93,7 +92,7 @@ export default defineType({
     select: {
       title: "title",
       subtitle: "subtitle",
-      media: "image[0].image",
+      media: "image.image.[0].image",
     },
   },
 });

@@ -47,8 +47,8 @@ export default defineType({
     },
     prepare({ title, backgroundColour }: any) {
       let customTitle = "No title";
-      if (title && title[0]) {
-        customTitle = title
+      if (title && title.en && title.en.length > 0) {
+        customTitle = title.en
           .map((text: any) => text.children.map((child: any) => child.text))
           .join(" ");
       }
