@@ -6,6 +6,7 @@ import { SanityStructure } from "./sanity-structure";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
 import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
 import { shopifyAssets } from "sanity-plugin-shopify-assets";
+import CsvUploadRedirects from "./schemas/actions/csvUploader";
 // import StudioLogo from "./utils/StudioLogo";
 // import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
@@ -17,6 +18,14 @@ export default defineConfig({
   title: "Sanity Studio Boilerplate",
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: process.env.SANITY_STUDIO_DATASET!,
+  document: {
+    actions: (prev, context) => {
+      // Only add the action for documents of type "movie"
+      return context.schemaType === "redirectGroup"
+        ? [CsvUploadRedirects, ...prev]
+        : prev;
+    },
+  },
   plugins: [
     structureTool({
       structure: SanityStructure,

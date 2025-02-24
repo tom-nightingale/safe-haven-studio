@@ -18,21 +18,45 @@ export default defineType({
     defineField({
       name: "source",
       type: "slug",
-      validation: (rule: Rule) => slugValidator(rule),
+      // validation: (rule: Rule) => slugValidator(rule),
     }),
     defineField({
       name: "destination",
       type: "slug",
-      validation: (rule: Rule) => slugValidator(rule),
+      // validation: (rule: Rule) => slugValidator(rule),
     }),
     defineField({
-      name: "permanent",
-      type: "boolean",
+      title: "Status",
+      name: "status",
+      type: "string",
+      options: {
+        list: [
+          { title: "301", value: "301" },
+          { title: "302", value: "302" },
+          { title: "303", value: "303" },
+          { title: "307", value: "307" },
+          { title: "308", value: "308" },
+        ],
+      },
+      description: "Redirect status",
+      initialValue: "301",
+      // validation: rule => rule.required(),
+    }),
+    defineField({
+      title: "Match",
+      name: "match",
+      type: "string",
+      options: {
+        list: [
+          { title: "Exact", value: "exact" },
+          { title: "Prefix", value: "prefix" },
+        ],
+      },
+      description: "Redirect match type",
+      initialValue: "exact",
+      // validation: rule => rule.required(),
     }),
   ],
-  initialValue: {
-    permanent: true,
-  },
   preview: {
     select: {
       source: "source",
@@ -40,7 +64,7 @@ export default defineType({
     },
     prepare({ source, destination }: { source: Slug; destination: Slug }) {
       return {
-        title: `${source?.current} → ${destination?.current}`,
+        title: `${source?.current}   →   ${destination?.current}`,
       };
     },
   },
