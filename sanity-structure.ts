@@ -61,6 +61,10 @@ export const SanityStructure = (S: any, context: any) =>
                 ]),
             ),
         ),
+      S.listItem()
+        .title("Campaigns")
+        .schemaType("campaign")
+        .child(S.documentTypeList("campaign").title("Campaign")),
       S.divider(),
       S.listItem()
         .title("Redirect Groups")

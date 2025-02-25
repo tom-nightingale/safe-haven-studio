@@ -13,6 +13,7 @@ import productWithVariant from "./objects/productWithVariant";
 import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
 import redirect from "./objects/Redirect";
+import plpCampaignSlot from "./objects/PLPCampaignSlot";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -31,6 +32,7 @@ import Banner from "./documents/Banner";
 import Page from "./documents/Page";
 import Navigation from "./documents/Navigation";
 import RedirectGroup from "./documents/RedirectGroup";
+import Campaign from "./documents/Campaign";
 
 // Shopify Documents
 import Collection from "./documents/Collection";
@@ -74,6 +76,7 @@ const objectSchema = [
   carouselCard,
   heroImage,
   redirect,
+  plpCampaignSlot,
 ];
 
 const contentBlockSchema = [
@@ -86,7 +89,14 @@ const contentBlockSchema = [
   textWithImage,
 ];
 
-const documentSchema = [Banner, Page, Navigation, RedirectGroup, Global];
+const documentSchema = [
+  Banner,
+  Page,
+  Navigation,
+  RedirectGroup,
+  Campaign,
+  Global,
+];
 
 const shopifySchema = [Collection, Product, ProductVariant];
 

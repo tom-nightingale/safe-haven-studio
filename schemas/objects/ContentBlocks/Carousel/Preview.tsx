@@ -14,7 +14,7 @@ export const Preview = (props: PreviewProps) => {
   const { title, subtitle, carouselCards } = props;
 
   useEffect(() => {
-    if (!carouselCards[0].product?._ref) return;
+    if (!carouselCards || !carouselCards[0].product?._ref) return;
 
     // Fetch the product details
     const query = `*[_type == "product" && _id == $id][0]{store { title, "imageUrl": previewImageUrl }}`;
@@ -23,7 +23,11 @@ export const Preview = (props: PreviewProps) => {
       .then(setProductData);
   }, [carouselCards]);
 
-  if (carouselCards[0]?.cardType === "product" && !productData) {
+  if (
+    carouselCards &&
+    carouselCards[0]?.cardType === "product" &&
+    !productData
+  ) {
     return <div>Loading...</div>;
   }
 
@@ -37,7 +41,7 @@ export const Preview = (props: PreviewProps) => {
           alignItems: "center",
         }}
       >
-        {carouselCards[0]?.cardType === "product" && (
+        {carouselCards && carouselCards[0]?.cardType === "product" && (
           <Flex
             style={{ padding: "0.5rem", gap: "0.5rem", alignItems: "center" }}
           >
@@ -67,7 +71,7 @@ export const Preview = (props: PreviewProps) => {
             </Box>
           </Flex>
         )}
-        {carouselCards[0]?.cardType === "editorial" && (
+        {carouselCards && carouselCards[0]?.cardType === "editorial" && (
           <Box flex={1}>{props.renderDefault(props)}</Box>
         )}
       </Box>

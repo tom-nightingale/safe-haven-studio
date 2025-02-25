@@ -52,7 +52,7 @@ export default defineType({
       title: "title.en",
       subtitle: "subtitle.en",
       carouselCards: "carouselCards",
-      media: "carouselCards[0].image.image",
+      media: "carouselCards[0]?.image?.image",
     },
   },
 });
