@@ -13,7 +13,7 @@ import productWithVariant from "./objects/productWithVariant";
 import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
 import redirect from "./objects/Redirect";
-import plpCampaignSlot from "./objects/PLPCampaignSlot";
+import plpCampaignSlot from "./objects/Campaign/Slot";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";

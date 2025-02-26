@@ -32,6 +32,17 @@ export default defineType({
       validation: Rule => Rule.required(),
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      group: "content",
+      validation: Rule => Rule.required(),
+      options: {
+        source: "title.en",
+        maxLength: 96,
+      },
+    }),
+    defineField({
       title: "Use dark header theme?",
       name: "darkHeaderTheme",
       type: "boolean",
@@ -58,7 +69,7 @@ export default defineType({
     },
     prepare({ title }: { title: any }) {
       return {
-        title: title,
+        title: title.en,
       };
     },
   },

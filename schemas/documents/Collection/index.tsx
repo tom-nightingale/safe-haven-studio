@@ -6,6 +6,7 @@ import pluralize from "pluralize-esm";
 import CollectionHiddenInput from "../../components/inputs/CollectionHidden";
 import ShopifyIcon from "../../components/icons/Shopify";
 import ShopifyDocumentStatus from "../../components/media/ShopifyDocumentStatus";
+import { CollectionLink } from "../../objects/Collection/CollectionLink";
 
 const GROUPS = [
   {
@@ -62,11 +63,28 @@ export default defineType({
       options: { field: "store.slug.current" },
     }),
     defineField({
-      title: "Content Blocks",
-      name: "contentBlocks",
-      type: "contentBlocks",
+      title: "Collection Intro",
+      name: "collectionIntro",
+      type: "blockContent",
       group: "editorial",
+      // description: "Introduction to the collection",
     }),
+    defineField({
+      title: "Collection Links",
+      name: "collectionLinks",
+      type: "string",
+      group: "editorial",
+      components: {
+        input: CollectionLink,
+      },
+      // of: [{ type: "collectionLink" }],
+    }),
+    // defineField({
+    //   title: "Content Blocks",
+    //   name: "contentBlocks",
+    //   type: "contentBlocks",
+    //   group: "editorial",
+    // }),
     // Shopify collection
     defineField({
       name: "store",
