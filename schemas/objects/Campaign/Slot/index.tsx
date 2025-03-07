@@ -17,6 +17,7 @@ export default defineType({
           { title: "PLP Slot 3", value: "3" },
         ],
       },
+      validation: rule => rule.required(),
     }),
     defineField({
       title: "Content Blocks",
@@ -29,7 +30,7 @@ export default defineType({
         { type: "twoImageHero" },
         { type: "video" },
       ],
-      validation: rule => rule.max(1),
+      validation: rule => [rule.required(), rule.max(1)],
     }),
     defineField({
       title: "Publish on",

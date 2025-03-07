@@ -14,6 +14,8 @@ import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/Carousel
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
 import redirect from "./objects/Redirect";
 import plpCampaignSlot from "./objects/Campaign/Slot";
+import CollectionLinkSchema from "./objects/Collection/CollectionLinkSchema";
+import CollectionLink from "./objects/Collection/CollectionLink";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -77,6 +79,8 @@ const objectSchema = [
   heroImage,
   redirect,
   plpCampaignSlot,
+  CollectionLinkSchema,
+  CollectionLink,
 ];
 
 const contentBlockSchema = [

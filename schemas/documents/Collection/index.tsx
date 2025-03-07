@@ -1,12 +1,10 @@
 // import React from "react";
 import { defineField, defineType } from "sanity";
 import { PackageIcon } from "@sanity/icons";
-import { getExtension } from "@sanity/asset-utils";
 import pluralize from "pluralize-esm";
 import CollectionHiddenInput from "../../components/inputs/CollectionHidden";
 import ShopifyIcon from "../../components/icons/Shopify";
 import ShopifyDocumentStatus from "../../components/media/ShopifyDocumentStatus";
-import { CollectionLink } from "../../objects/Collection/CollectionLink";
 
 const GROUPS = [
   {
@@ -72,12 +70,13 @@ export default defineType({
     defineField({
       title: "Collection Links",
       name: "collectionLinks",
-      type: "string",
+      type: "array",
+      of: [
+        {
+          type: "collectionLink",
+        },
+      ],
       group: "editorial",
-      components: {
-        input: CollectionLink,
-      },
-      // of: [{ type: "collectionLink" }],
     }),
     // defineField({
     //   title: "Content Blocks",

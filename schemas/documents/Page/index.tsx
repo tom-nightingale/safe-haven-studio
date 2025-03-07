@@ -32,6 +32,13 @@ export default defineType({
       validation: Rule => Rule.required(),
     }),
     defineField({
+      title: "Subtitle",
+      name: "subtitle",
+      type: "localeString",
+      group: "content",
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
