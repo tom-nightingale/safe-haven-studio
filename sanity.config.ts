@@ -4,7 +4,6 @@ import { visionTool } from "@sanity/vision";
 import { schemas } from "./schemas";
 import { SanityStructure } from "./sanity-structure";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
-import CsvUploadRedirects from "./schemas/actions/csvUploader";
 import "./styles/config.css";
 
 export default defineConfig({
@@ -13,14 +12,6 @@ export default defineConfig({
   title: "Safe Haven Nursery",
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: process.env.SANITY_STUDIO_DATASET!,
-  document: {
-    actions: (prev, context) => {
-      // Only add the action for documents of type "movie"
-      return context.schemaType === "redirectGroup"
-        ? [CsvUploadRedirects, ...prev]
-        : prev;
-    },
-  },
   plugins: [
     structureTool({
       structure: SanityStructure,

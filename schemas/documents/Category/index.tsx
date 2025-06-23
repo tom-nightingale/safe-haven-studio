@@ -1,12 +1,11 @@
 import { defineField, defineType } from "sanity";
-
-import { EditIcon } from "@sanity/icons";
+import { SchemaIcon } from "@sanity/icons";
 
 export default defineType({
-  name: "page",
-  title: "Page",
+  name: "category",
+  title: "Category",
   type: "document",
-  icon: EditIcon,
+  icon: SchemaIcon,
   groups: [
     {
       name: "content",
@@ -27,13 +26,6 @@ export default defineType({
       validation: Rule => Rule.required(),
     }),
     defineField({
-      title: "Subtitle",
-      name: "subtitle",
-      type: "string",
-      group: "content",
-      validation: Rule => Rule.required(),
-    }),
-    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -43,12 +35,6 @@ export default defineType({
         source: "title",
         maxLength: 96,
       },
-    }),
-    defineField({
-      title: "Content Blocks",
-      name: "contentBlocks",
-      type: "contentBlocks",
-      group: "content",
     }),
     defineField({
       title: "SEO / Share Settings",
@@ -61,7 +47,7 @@ export default defineType({
     select: {
       title: "title",
     },
-    prepare({ title }: { title: string }) {
+    prepare({ title }: { title: any }) {
       return {
         title: title,
       };

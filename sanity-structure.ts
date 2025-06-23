@@ -1,5 +1,4 @@
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
-// import { InfoOutlineIcon } from "@sanity/icons";
 
 export const SanityStructure = (S: any, context: any) =>
   S.list()
@@ -17,6 +16,7 @@ export const SanityStructure = (S: any, context: any) =>
         .schemaType("page")
         .child(S.documentTypeList("page").title("Pages")),
 
+      S.divider(),
       orderableDocumentListDeskItem({
         type: "post",
         title: "Blog Posts",
@@ -24,15 +24,27 @@ export const SanityStructure = (S: any, context: any) =>
         context,
       }),
       S.listItem()
+        .title("Categories")
+        .schemaType("category")
+        .child(S.documentTypeList("category").title("Categories")),
+      S.divider(),
+      S.listItem()
+        .title("Nurseries")
+        .schemaType("nursery")
+        .child(S.documentTypeList("nursery").title("Nurseries")),
+      S.listItem()
         .title("Staff Members")
         .schemaType("staff")
         .child(S.documentTypeList("staff").title("Staff Members")),
+      S.listItem()
+        .title("Feedback")
+        .schemaType("feedback")
+        .child(S.documentTypeList("feedback").title("Feedback")),
       S.divider(),
       S.listItem()
         .title("Navigation")
         .schemaType("navigation")
         .child(S.documentTypeList("navigation").title("Navigation")),
-      S.divider(),
       S.listItem()
         .title("Global Settings")
         .schemaType("global")

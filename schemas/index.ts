@@ -25,6 +25,9 @@ import Page from "./documents/Page";
 import Navigation from "./documents/Navigation";
 import StaffMembers from "./documents/StaffMember";
 import BlogPosts from "./documents/Post";
+import Category from "./documents/Category";
+import Nursery from "./documents/Nursery";
+import Feedback from "./documents/Feedback";
 
 const objectSchema = [
   seo,
@@ -56,6 +59,9 @@ const documentSchema = [
   Global,
   StaffMembers,
   BlogPosts,
+  Category,
+  Nursery,
+  Feedback,
 ];
 
 export const schemas = [

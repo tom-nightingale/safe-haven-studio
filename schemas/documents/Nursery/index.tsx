@@ -1,11 +1,11 @@
 import { defineField, defineType } from "sanity";
-import { BlockContentIcon } from "@sanity/icons";
+import { MarkerIcon } from "@sanity/icons";
 
 export default defineType({
-  name: "post",
-  title: "Blog Posts",
+  name: "nursery",
+  title: "Nurseries",
   type: "document",
-  icon: BlockContentIcon,
+  icon: MarkerIcon,
   groups: [
     {
       name: "content",
@@ -32,25 +32,9 @@ export default defineType({
       group: "content",
     }),
     defineField({
-      title: "Article Image",
-      name: "articleImage",
-      type: "imageBlock",
-      validation: rule => rule.required(),
-      group: "content",
-    }),
-    defineField({
       title: "Content",
       name: "content",
       type: "blockContent",
-      group: "content",
-    }),
-    defineField({
-      name: "category",
-      title: "Category",
-      type: "reference",
-      to: { type: "category" },
-      description: "Which category does this blog post relate to?",
-      validation: rule => rule.required(),
       group: "content",
     }),
     defineField({
@@ -74,22 +58,10 @@ export default defineType({
   preview: {
     select: {
       name: "title",
-      articleImage: "articleImage",
-      category: "category.title",
     },
-    prepare({
-      name,
-      articleImage,
-      category,
-    }: {
-      name: String;
-      articleImage: any;
-      category: any;
-    }) {
+    prepare({ name }: { name: string }) {
       return {
         title: name,
-        subtitle: category ? `Category: ${category}` : "No category yet...",
-        media: articleImage?.image?.asset,
       };
     },
   },

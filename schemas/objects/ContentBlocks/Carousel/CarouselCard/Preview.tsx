@@ -14,7 +14,7 @@ type CustomPreviewProps = PreviewProps & {
 
 export const Preview = (props: CustomPreviewProps) => {
   const [productData, setProductData] = useState<any>(null);
-  const client = useClient({ apiVersion: "2022-10-25" });
+  const client = useClient({ apiVersion: "2025-02-10" });
 
   const { productRef, cardType } = props;
 

@@ -24,4 +24,15 @@ export default defineType({
       of: [{ type: "navigation.link" }],
     }),
   ],
+  preview: {
+    select: {
+      parentTitle: "target.title",
+      title: "title",
+    },
+    prepare({ parentTitle, title }) {
+      return {
+        title: title ? title : parentTitle,
+      };
+    },
+  },
 });

@@ -52,27 +52,7 @@ export default defineType({
       type: "string",
       description: "Link destination",
       hidden: ({ parent }) => parent?.cardType === "product",
-      // validation: rule =>
-      //   rule.max(50).warning("Shorter titles are usually better"),
     }),
-    // Product
-    // defineField({
-    //   type: "reference",
-    //   name: "product",
-    //   title: "Product",
-    //   to: [{ type: "product" }],
-    //   description: "Product",
-    //   hidden: ({ parent }) => parent?.cardType === "editorial",
-    //   // validation: rule => rule.required(),
-    // }),
-    // defineField({
-    //   title: "Show price?",
-    //   name: "showPrice",
-    //   type: "boolean",
-    //   description: "Show price for this product?",
-    //   hidden: ({ parent }) => parent?.cardType === "editorial",
-    //   initialValue: true,
-    // }),
   ],
   components: { preview: Preview },
   preview: {

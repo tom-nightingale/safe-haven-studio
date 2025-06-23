@@ -9,7 +9,7 @@ export const capitalizeFirstLetter = (str: string) => {
 
 export const Preview = (props: PreviewProps) => {
   const [productData, setProductData] = useState(null);
-  const client = useClient({ apiVersion: "2022-10-25" });
+  const client = useClient({ apiVersion: "2025-02-10" });
 
   const { title, subtitle, carouselCards } = props;
 

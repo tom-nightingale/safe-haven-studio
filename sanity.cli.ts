@@ -1,6 +1,7 @@
-import {defineCliConfig} from 'sanity/cli'
+import { defineCliConfig } from "sanity/cli";
 
 export default defineCliConfig({
+  studioHost: "safe-haven",
   api: {
     projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
     dataset: process.env.SANITY_STUDIO_DATASET!,
@@ -10,4 +11,4 @@ export default defineCliConfig({
    * Learn more at https://www.sanity.io/docs/cli#auto-updates
    */
   autoUpdates: true,
-})
+});
