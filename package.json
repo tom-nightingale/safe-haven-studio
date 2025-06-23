@@ -22,9 +22,6 @@
     "react-csv-importer": "^0.8.1",
     "react-dom": "^18.2.0",
     "sanity": "^3.64.1",
-    "sanity-plugin-hotspot-array": "^2.1.1",
-    "sanity-plugin-internationalized-array": "^3.0.2",
-    "sanity-plugin-shopify-assets": "^1.1.0",
     "sanity-plugin-simpler-color-input": "^3.0.0",
     "styled-components": "^6.1.8"
   },

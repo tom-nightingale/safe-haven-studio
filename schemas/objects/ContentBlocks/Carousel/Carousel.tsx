@@ -9,13 +9,13 @@ export default defineType({
     defineField({
       title: "Title",
       name: "title",
-      type: "localeString",
+      type: "string",
       description: "Title",
     }),
     defineField({
       title: "Subtitle",
       name: "subtitle",
-      type: "localeString",
+      type: "string",
       description: "Subtitle",
     }),
     defineField({

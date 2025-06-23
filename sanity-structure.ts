@@ -1,9 +1,9 @@
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
-import { InfoOutlineIcon } from "@sanity/icons";
+// import { InfoOutlineIcon } from "@sanity/icons";
 
 export const SanityStructure = (S: any, context: any) =>
   S.list()
-    .title("Sanity Studio Boilerplate")
+    .title("Safe Haven Nursery")
     .items([
       S.divider(),
       orderableDocumentListDeskItem({
@@ -16,60 +16,22 @@ export const SanityStructure = (S: any, context: any) =>
         .title("Pages")
         .schemaType("page")
         .child(S.documentTypeList("page").title("Pages")),
+
+      orderableDocumentListDeskItem({
+        type: "post",
+        title: "Blog Posts",
+        S,
+        context,
+      }),
+      S.listItem()
+        .title("Staff Members")
+        .schemaType("staff")
+        .child(S.documentTypeList("staff").title("Staff Members")),
+      S.divider(),
       S.listItem()
         .title("Navigation")
         .schemaType("navigation")
         .child(S.documentTypeList("navigation").title("Navigation")),
-      S.divider(),
-      S.listItem()
-        .title("Collections")
-        .schemaType("collection")
-        .child(S.documentTypeList("collection")),
-      S.listItem()
-        .title("Products")
-        .schemaType("product")
-        .child(
-          S.documentTypeList("product")
-            // .defaultLayout('detail')
-            .child(async id =>
-              S.list()
-                .title("Product")
-                .items([
-                  // Details
-                  S.listItem()
-                    .title("Details")
-                    .icon(InfoOutlineIcon)
-                    .child(S.document().schemaType("product").documentId(id)),
-                  // Product variants
-                  S.listItem()
-                    .title("Variants")
-                    .schemaType("productVariant")
-                    .child(
-                      S.documentList()
-                        .title("Variants")
-                        .schemaType("productVariant")
-                        .filter(
-                          `
-                      _type == "productVariant"
-                      && store.productId == $productId
-                    `,
-                        )
-                        .params({
-                          productId: Number(id.replace("shopifyProduct-", "")),
-                        }),
-                    ),
-                ]),
-            ),
-        ),
-      S.listItem()
-        .title("Campaigns")
-        .schemaType("campaign")
-        .child(S.documentTypeList("campaign").title("Campaign")),
-      S.divider(),
-      S.listItem()
-        .title("Redirect Groups")
-        .schemaType("redirectGroup")
-        .child(S.documentTypeList("redirectGroup").title("Redirect Groups")),
       S.divider(),
       S.listItem()
         .title("Global Settings")

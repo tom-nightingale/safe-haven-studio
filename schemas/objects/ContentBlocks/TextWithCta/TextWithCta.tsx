@@ -9,15 +9,14 @@ export default defineType({
     defineField({
       title: "Title",
       name: "title",
-      type: "localeString",
+      type: "string",
       description: "Title",
       validation: rule => rule.required(),
     }),
     defineField({
       title: "Text",
       name: "text",
-      type: "localeBlockContent",
-      description: "Text",
+      type: "blockContent",
       validation: rule => rule.required(),
     }),
     defineField({

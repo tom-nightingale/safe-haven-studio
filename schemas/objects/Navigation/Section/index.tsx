@@ -9,7 +9,7 @@ export default defineType({
       type: "reference",
       name: "target",
       title: "Target",
-      to: [{ type: "page" }, { type: "collection" }],
+      to: [{ type: "page" }],
     }),
     defineField({
       type: "string",

@@ -1,11 +1,9 @@
 import { defineField, defineType } from "sanity";
-import { BlockContentIcon } from "@sanity/icons";
 
 export default defineType({
-  name: "page",
-  title: "Page",
+  name: "post",
+  title: "Blog Posts",
   type: "document",
-  icon: BlockContentIcon,
   groups: [
     {
       name: "content",
@@ -28,15 +26,21 @@ export default defineType({
       title: "Title",
       name: "title",
       type: "string",
-      group: "content",
       validation: Rule => Rule.required(),
+      group: "content",
     }),
     defineField({
-      title: "Subtitle",
-      name: "subtitle",
-      type: "string",
+      title: "Article Image",
+      name: "articleImage",
+      type: "imageBlock",
+      validation: rule => rule.required(),
       group: "content",
-      validation: Rule => Rule.required(),
+    }),
+    defineField({
+      title: "Content",
+      name: "content",
+      type: "blockContent",
+      group: "content",
     }),
     defineField({
       name: "slug",
@@ -50,12 +54,6 @@ export default defineType({
       },
     }),
     defineField({
-      title: "Content Blocks",
-      name: "contentBlocks",
-      type: "contentBlocks",
-      group: "content",
-    }),
-    defineField({
       title: "SEO / Share Settings",
       name: "seo",
       type: "seo",
@@ -64,11 +62,13 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "title",
+      name: "title",
+      articleImage: "articleImage",
     },
-    prepare({ title }: { title: any }) {
+    prepare({ name, articleImage }: { name: String; articleImage: any }) {
       return {
-        title: title.en,
+        title: name,
+        media: articleImage?.image?.asset,
       };
     },
   },

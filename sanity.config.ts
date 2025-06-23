@@ -4,18 +4,13 @@ import { visionTool } from "@sanity/vision";
 import { schemas } from "./schemas";
 import { SanityStructure } from "./sanity-structure";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
-import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
-import { shopifyAssets } from "sanity-plugin-shopify-assets";
 import CsvUploadRedirects from "./schemas/actions/csvUploader";
-// import StudioLogo from "./utils/StudioLogo";
-// import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
-
 import "./styles/config.css";
 
 export default defineConfig({
   // icon: StudioLogo,
   name: "default",
-  title: "Sanity Studio Boilerplate",
+  title: "Safe Haven Nursery",
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: process.env.SANITY_STUDIO_DATASET!,
   document: {
@@ -42,10 +37,6 @@ export default defineConfig({
         { label: "Custom...", value: "custom" },
       ],
       enableSearch: true,
-    }),
-    imageHotspotArrayPlugin(),
-    shopifyAssets({
-      shopifyDomain: "*.myshopify.com",
     }),
     // vercelDeployTool()
   ],

@@ -8,7 +8,7 @@ export default defineType({
     defineField({
       title: "Title",
       name: "title",
-      type: "localeString",
+      type: "string",
       description: "Title of the block",
       validation: rule => rule.required(),
     }),

@@ -8,7 +8,7 @@ export default defineType({
     defineField({
       title: "Label",
       name: "label",
-      type: "localeString",
+      type: "string",
       description: "Label to use for the link",
     }),
     defineField({

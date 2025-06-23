@@ -17,7 +17,7 @@ export default defineType({
     defineField({
       title: "Alt Text",
       name: "altText",
-      type: "localeString",
+      type: "string",
       description: "Alt text to use for the image",
     }),
   ],

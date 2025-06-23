@@ -14,7 +14,7 @@ export default defineType({
     defineField({
       title: "Content",
       name: "content",
-      type: "localeText",
+      type: "string",
       description: "Content of the banner",
       validation: Rule => Rule.required(),
     }),
