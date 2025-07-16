@@ -32,6 +32,48 @@ export default defineType({
       group: "content",
     }),
     defineField({
+      title: "Location",
+      name: "location",
+      type: "string",
+      validation: Rule => Rule.required(),
+      group: "content",
+    }),
+    defineField({
+      title: "Address",
+      name: "address",
+      type: "string",
+      validation: Rule => Rule.required(),
+      group: "content",
+    }),
+    defineField({
+      title: "Phone Number",
+      name: "phoneNumber",
+      type: "string",
+      validation: Rule => Rule.required(),
+      group: "content",
+    }),
+    defineField({
+      title: "Email",
+      name: "email",
+      type: "string",
+      validation: Rule => Rule.required(),
+      group: "content",
+    }),
+    defineField({
+      title: "Directions Link",
+      name: "directionsLink",
+      type: "url",
+      validation: Rule => Rule.required(),
+      group: "content",
+    }),
+    defineField({
+      title: "Maps Link",
+      name: "mapsLink",
+      type: "url",
+      validation: Rule => Rule.required(),
+      group: "content",
+    }),
+    defineField({
       title: "Content",
       name: "content",
       type: "blockContent",
@@ -57,11 +99,13 @@ export default defineType({
   ],
   preview: {
     select: {
-      name: "title",
+      title: "title",
+      location: "location",
     },
-    prepare({ name }: { name: string }) {
+    prepare({ title, location }: { title: string; location: string }) {
       return {
-        title: name,
+        title: title,
+        subtitle: location,
       };
     },
   },

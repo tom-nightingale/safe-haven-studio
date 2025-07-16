@@ -20,6 +20,18 @@ export default defineType({
   ],
   fields: [
     defineField({
+      title: "Page type",
+      name: "pageType",
+      type: "string",
+      options: {
+        list: [
+          { title: "Page", value: "page" },
+          { title: "Room", value: "room" },
+        ],
+      },
+      group: "content",
+    }),
+    defineField({
       title: "Title",
       name: "title",
       type: "string",
@@ -57,6 +69,9 @@ export default defineType({
       group: "seo",
     }),
   ],
+  initialValue: {
+    pageType: "page",
+  },
   preview: {
     select: {
       title: "title",

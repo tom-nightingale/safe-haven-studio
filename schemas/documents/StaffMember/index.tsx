@@ -26,10 +26,23 @@ export default defineType({
       validation: Rule => Rule.required(),
     }),
     defineField({
+      title: "Room",
+      name: "room",
+      type: "reference",
+      to: [{ type: "page" }],
+      options: {
+        filter: "pageType == $pageType",
+        filterParams: {
+          pageType: "room",
+        },
+      },
+      // validation: Rule => Rule.required(),
+    }),
+    defineField({
       title: "Profile Image",
       name: "profileImage",
       type: "imageBlock",
-      validation: rule => rule.required(),
+      // validation: rule => rule.required(),
     }),
     defineField({
       title: "Biography",

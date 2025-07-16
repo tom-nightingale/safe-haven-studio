@@ -18,7 +18,7 @@ export default defineType({
       type: "reference",
       name: "target",
       title: "Link target",
-      to: [{ type: "page" }, { type: "category" }],
+      to: [{ type: "page" }, { type: "nursery" }, { type: "category" }],
       description: "Description",
     }),
     defineField({
