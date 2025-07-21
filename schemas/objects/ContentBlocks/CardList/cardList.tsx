@@ -2,8 +2,8 @@ import { defineField, defineType } from "sanity";
 import { BlockPreview } from "../BlockPreview";
 
 export default defineType({
-  name: "textWithImage",
-  title: "Text With Image",
+  name: "cardList",
+  title: "Card List",
   type: "object",
   fields: [
     defineField({
@@ -13,31 +13,31 @@ export default defineType({
       description: "Does this block need a scalloped top?",
     }),
     defineField({
-      title: "Text",
-      name: "text",
-      type: "blockContent",
-      description: "Text",
+      title: "Title",
+      name: "title",
+      type: "string",
+      description: "Title",
     }),
     defineField({
-      title: "Links",
-      name: "links",
+      title: "Subtitle",
+      name: "subtitle",
+      type: "string",
+      description: "Subtitle",
+    }),
+    defineField({
+      title: "Cards",
+      name: "cards",
       type: "array",
-      of: [{ type: "link" }],
-      validation: rule => rule.max(1),
-    }),
-    defineField({
-      title: "Image",
-      name: "image",
-      type: "imageBlock",
-      validation: rule => rule.required(),
+      of: [{ type: "cardListCard" }],
+      validation: rule => rule.required().min(3),
     }),
   ],
   components: { preview: BlockPreview },
   preview: {
     select: {
-      title: "text",
+      title: "title",
       subtitle: "subtitle",
-      media: "image.image",
+      media: "cards[0].image.image",
     },
   },
 });

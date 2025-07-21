@@ -2,15 +2,15 @@ import { defineField, defineType } from "sanity";
 import { BlockPreview } from "../BlockPreview";
 
 export default defineType({
-  name: "textWithImage",
-  title: "Text With Image",
+  name: "staffCards",
+  title: "Staff Cards",
   type: "object",
   fields: [
     defineField({
-      title: "Scalloped Top?",
-      name: "scallopedTop",
-      type: "boolean",
-      description: "Does this block need a scalloped top?",
+      title: "Title",
+      name: "title",
+      type: "string",
+      description: "Title",
     }),
     defineField({
       title: "Text",
@@ -26,18 +26,25 @@ export default defineType({
       validation: rule => rule.max(1),
     }),
     defineField({
-      title: "Image",
-      name: "image",
-      type: "imageBlock",
-      validation: rule => rule.required(),
+      title: "Staff Profiles",
+      name: "staffProfiles",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "staff",
+            },
+          ],
+        },
+      ],
     }),
   ],
   components: { preview: BlockPreview },
   preview: {
     select: {
-      title: "text",
-      subtitle: "subtitle",
-      media: "image.image",
+      title: "title",
     },
   },
 });

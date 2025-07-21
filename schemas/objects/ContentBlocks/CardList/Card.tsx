@@ -1,15 +1,22 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "twoImageHeroBlock",
-  title: "Two Image Hero Block",
+  name: "cardListCard",
+  title: "Card List Card",
   type: "object",
   fields: [
     defineField({
       title: "Title",
       name: "title",
       type: "string",
-      description: "Title of the block",
+      description: "Title of the card",
+      validation: rule => rule.required(),
+    }),
+    defineField({
+      title: "Subtitle",
+      name: "subtitle",
+      type: "string",
+      description: "Subtitle of the card",
       validation: rule => rule.required(),
     }),
     defineField({
@@ -27,7 +34,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "title.en",
+      title: "title",
       media: "image.image",
     },
     prepare: ({ title, media }) => ({

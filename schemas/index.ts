@@ -3,21 +3,22 @@ import seo from "./objects/Seo";
 import link from "./objects/Link";
 import blockContent from "./objects/BlockContent";
 import imageBlock from "./objects/ImageBlock";
-import twoImageHeroBlock from "./objects/ContentBlocks/TwoImageHero/TwoImageHeroBlock";
+import cardListCard from "./objects/ContentBlocks/CardList/Card";
 import NavigationSection from "./objects/Navigation/Section";
 import NavigationLink from "./objects/Navigation/Link";
 import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
+import heroCard from "./objects/ContentBlocks/Hero/HeroCard";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
-import twoImageHero from "./objects/ContentBlocks/TwoImageHero/TwoImageHero";
+import cardList from "./objects/ContentBlocks/CardList/cardList";
 import hero from "./objects/ContentBlocks/Hero/Hero";
-import video from "./objects/ContentBlocks/Video/Video";
-import spacer from "./objects/ContentBlocks/Spacer/Spacer";
-import textWithCta from "./objects/ContentBlocks/TextWithCta/TextWithCta";
+import reviewsCarousel from "./objects/ContentBlocks/ReviewsCarousel/ReviewsCarousel";
 import carousel from "./objects/ContentBlocks/Carousel/Carousel";
 import textWithImage from "./objects/ContentBlocks/TextWithImage/TextWithImage";
+import staffCards from "./objects/ContentBlocks/StaffCards/StaffCards";
+import locationDetails from "./objects/ContentBlocks/LocationDetails/LocationDetails";
 
 import Global from "./documents/Global";
 import Banner from "./documents/Banner";
@@ -35,21 +36,22 @@ const objectSchema = [
   blockContent,
   contentBlocks,
   imageBlock,
-  twoImageHeroBlock,
+  cardListCard,
   NavigationSection,
   NavigationLink,
   carouselCard,
   heroImage,
+  heroCard,
 ];
 
 const contentBlockSchema = [
   hero,
-  video,
-  spacer,
-  twoImageHero,
-  textWithCta,
+  cardList,
   carousel,
   textWithImage,
+  reviewsCarousel,
+  staffCards,
+  locationDetails,
 ];
 
 const documentSchema = [
