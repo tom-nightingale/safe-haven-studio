@@ -1,12 +1,12 @@
 import { defineField, defineType } from "sanity";
 import { BlockPreview } from "../BlockPreview";
-import { CommentIcon } from "@sanity/icons";
+import { ImageIcon } from "@sanity/icons";
 
 export default defineType({
-  name: "reviewsCarousel",
-  title: "ReviewsCarousel",
+  name: "gallery",
+  title: "Gallery",
   type: "object",
-  icon: CommentIcon,
+  icon: ImageIcon,
   fields: [
     defineField({
       title: "Scalloped Top?",
@@ -21,19 +21,22 @@ export default defineType({
       description: "Does this block need a scalloped bottom?",
     }),
     defineField({
-      title: "Title",
-      name: "title",
-      type: "string",
-      description: "title",
+      title: "Images",
+      name: "images",
+      type: "array",
+      of: [{ type: "imageBlock" }],
+      options: {
+        layout: "grid",
+      },
+      validation: rule => rule.min(1),
     }),
   ],
-  initialValue: {
-    title: "We Come Highly Recommended...",
-  },
   components: { preview: BlockPreview },
   preview: {
-    select: {
-      title: "title",
+    prepare() {
+      return {
+        title: "Gallery",
+      };
     },
   },
 });

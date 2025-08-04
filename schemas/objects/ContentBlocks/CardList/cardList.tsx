@@ -39,5 +39,12 @@ export default defineType({
       subtitle: "subtitle",
       media: "cards[0].image.image",
     },
+    prepare(selection) {
+      return {
+        title: selection?.title ?? "Card List",
+        subtitle: selection?.subtitle,
+        media: selection?.media,
+      };
+    },
   },
 });

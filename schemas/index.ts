@@ -9,11 +9,13 @@ import NavigationLink from "./objects/Navigation/Link";
 import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/CarouselCard";
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
 import heroCard from "./objects/ContentBlocks/Hero/HeroCard";
+import gallery from "./objects/ContentBlocks/Gallery/Gallery";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
 import cardList from "./objects/ContentBlocks/CardList/cardList";
 import hero from "./objects/ContentBlocks/Hero/Hero";
+import simpleHero from "./objects/ContentBlocks/SimpleHero/SimpleHero";
 import reviewsCarousel from "./objects/ContentBlocks/ReviewsCarousel/ReviewsCarousel";
 import carousel from "./objects/ContentBlocks/Carousel/Carousel";
 import textWithImage from "./objects/ContentBlocks/TextWithImage/TextWithImage";
@@ -42,10 +44,12 @@ const objectSchema = [
   carouselCard,
   heroImage,
   heroCard,
+  gallery,
 ];
 
 const contentBlockSchema = [
   hero,
+  simpleHero,
   cardList,
   carousel,
   textWithImage,

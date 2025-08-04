@@ -17,7 +17,7 @@ export default defineType({
       name: "subtitle",
       type: "string",
       description: "Subtitle of the card",
-      validation: rule => rule.required(),
+      // validation: rule => rule.required(),
     }),
     defineField({
       title: "Image",

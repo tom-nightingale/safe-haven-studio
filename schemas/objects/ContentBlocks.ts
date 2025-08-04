@@ -11,11 +11,13 @@ export default defineType({
       type: "array",
       of: [
         { type: "hero" },
+        { type: "simpleHero" },
         { type: "cardList" },
         { type: "textWithImage" },
         { type: "reviewsCarousel" },
         { type: "staffCards" },
         { type: "locationDetails" },
+        { type: "gallery" },
         // { type: "carousel" },
         // { type: "spacer" },
         // { type: "textWithCta" },

@@ -1,10 +1,12 @@
 import { defineField, defineType } from "sanity";
 import { BlockPreview } from "../BlockPreview";
+import { UsersIcon } from "@sanity/icons";
 
 export default defineType({
   name: "staffCards",
   title: "Staff Cards",
   type: "object",
+  icon: UsersIcon,
   fields: [
     defineField({
       title: "Title",

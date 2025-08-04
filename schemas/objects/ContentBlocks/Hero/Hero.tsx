@@ -1,23 +1,13 @@
 import { defineField, defineType } from "sanity";
 import { BlockPreview } from "../BlockPreview";
+import { ImageIcon } from "@sanity/icons";
 
 export default defineType({
   name: "hero",
   title: "Hero",
   type: "object",
+  icon: ImageIcon,
   fields: [
-    defineField({
-      title: "Hero Type",
-      name: "heroType",
-      type: "string",
-      options: {
-        list: [
-          { title: "Default", value: "default" },
-          { title: "Simple", value: "simple" },
-        ],
-      },
-      description: "Hero Type (Default has an image, simple does not)",
-    }),
     defineField({
       title: "Title",
       name: "title",
@@ -30,13 +20,13 @@ export default defineType({
       type: "blockContent",
       description: "Subtitle",
     }),
-    defineField({
-      title: "Age Group",
-      name: "ageGroup",
-      type: "string",
-      description: "Age group",
-      hidden: ({ parent }) => parent?.heroType === "default",
-    }),
+    // defineField({
+    //   title: "Age Group",
+    //   name: "ageGroup",
+    //   type: "string",
+    //   description: "Age group",
+    //   hidden: ({ parent }) => parent?.heroType === "default",
+    // }),
     defineField({
       title: "Hero Image",
       name: "heroImage",

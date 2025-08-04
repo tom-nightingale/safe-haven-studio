@@ -15,6 +15,12 @@ export default defineType({
       description: "Image",
     }),
     defineField({
+      title: "Label",
+      name: "label",
+      type: "string",
+      description: "Label to use for the image",
+    }),
+    defineField({
       title: "Alt Text",
       name: "altText",
       type: "string",
