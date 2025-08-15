@@ -10,6 +10,7 @@ import carouselCard from "./objects/ContentBlocks/Carousel/CarouselCard/Carousel
 import heroImage from "./objects/ContentBlocks/Hero/HeroImage";
 import heroCard from "./objects/ContentBlocks/Hero/HeroCard";
 import gallery from "./objects/ContentBlocks/Gallery/Gallery";
+import youtube from "./objects/ContentBlocks/YoutubeVideo/YouTube";
 
 // Content block objects
 import contentBlocks from "./objects/ContentBlocks";
@@ -45,6 +46,7 @@ const objectSchema = [
   heroImage,
   heroCard,
   gallery,
+  youtube,
 ];
 
 const contentBlockSchema = [

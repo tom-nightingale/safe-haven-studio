@@ -42,7 +42,21 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      title: "Layout",
+      name: "layout",
+      type: "string",
+      options: {
+        list: [
+          { title: "Inline", value: "inline" },
+          { title: "Stacked", value: "stacked" },
+        ],
+      },
+    }),
   ],
+  initialValue: {
+    layout: "inline",
+  },
   components: { preview: BlockPreview },
   preview: {
     select: {
