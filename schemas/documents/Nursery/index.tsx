@@ -95,6 +95,15 @@ export default defineType({
       },
     }),
     defineField({
+      title: "Form ID",
+      name: "formId",
+      type: "string",
+      description:
+        "The ID of the form in Formspree. Warning: Updating this may stop emails from sending.",
+      validation: Rule => Rule.required(),
+      group: "nurseryDetails",
+    }),
+    defineField({
       title: "SEO / Share Settings",
       name: "seo",
       type: "seo",

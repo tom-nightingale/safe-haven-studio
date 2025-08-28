@@ -46,14 +46,8 @@ export default defineType({
       backgroundColour: "backgroundColour",
     },
     prepare({ title, backgroundColour }: any) {
-      let customTitle = "No title";
-      if (title && title.en && title.en.length > 0) {
-        customTitle = title.en
-          .map((text: any) => text.children.map((child: any) => child.text))
-          .join(" ");
-      }
       return {
-        title: customTitle,
+        title: title,
         media: (
           <span
             style={{

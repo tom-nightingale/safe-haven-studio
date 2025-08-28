@@ -57,7 +57,7 @@ export default defineType({
       },
     }),
     defineArrayMember({
-      type: "image",
+      type: "imageBlock",
     }),
     defineArrayMember({
       type: "youtube",

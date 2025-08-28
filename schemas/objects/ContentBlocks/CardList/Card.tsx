@@ -35,10 +35,12 @@ export default defineType({
   preview: {
     select: {
       title: "title",
+      subtitle: "subtitle",
       media: "image.image",
     },
-    prepare: ({ title, media }) => ({
+    prepare: ({ title, subtitle, media }) => ({
       title: title,
+      subtitle: subtitle,
       media: media,
     }),
   },

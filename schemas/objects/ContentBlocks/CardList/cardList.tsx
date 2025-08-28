@@ -29,7 +29,7 @@ export default defineType({
       name: "cards",
       type: "array",
       of: [{ type: "cardListCard" }],
-      validation: rule => rule.required().min(3),
+      validation: rule => rule.required().min(2),
     }),
   ],
   components: { preview: BlockPreview },
